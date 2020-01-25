@@ -18,14 +18,14 @@ Wrap markdown in the [markdown]shortcodes[/markdown] to have it parsed and conve
 
 Option to allow the output of other shortcodes to be parsed for markdown; if not enabled any markdown output by other shortcodes will remain markdown.
 
-Uses (Parsedown)[https://github.com/erusev/parsedown] and (Parsedown Extra)[https://github.com/erusev/parsedown] as well as some code from (Markdown Shortcode)[https://github.com/JohannesHoppe/markdown-shortcode/].
+Uses (Parsedown)[https://github.com/erusev/parsedown] and (Parsedown Extra)[https://github.com/erusev/parsedown-extra] as well as some code from (Markdown Shortcode)[https://github.com/JohannesHoppe/markdown-shortcode/].
 
-This plugin is multisite compatible; settings need to be configured for each site. 
+This plugin is multisite compatible; settings need to be configured for each site.
 
 == Installation ==
 
 To install the Markdown plugin:
-* Download the plugin from <a href='https://github.com/azurecurve/azrcrv-markdown/releases/latest/'>GitHub</a>.
+* Download the plugin from [GitHub](https://github.com/azurecurve/azrcrv-markdown/releases/latest/).
 * Upload the entire zip file using the Plugins upload function in your ClassicPress admin panel.
 * Activate the plugin.
 * Configure relevant settings via the configuration page in the admin control panel (under the azurecurve menu).
