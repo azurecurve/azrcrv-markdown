@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Markdown
  * Description: Allows markdown to be wrapped in a shortcode and converted to HTML.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/markdown/
@@ -26,6 +26,9 @@ if (!defined('ABSPATH')){
 require_once(dirname(__FILE__).'/pluginmenu/menu.php');
 register_activation_hook(__FILE__, 'azrcrv_create_plugin_menu_m');
 
+// include update client
+require_once(dirname(__FILE__).'/libraries/updateclient/UpdateClient.class.php');
+
 // include Parsedown and ParsedownExtra
 require "libraries/Parsedown/Parsedown.php";
 require "libraries/ParsedownExtra/ParsedownExtra.php";
@@ -42,6 +45,7 @@ register_activation_hook(__FILE__, 'azrcrv_m_set_default_options');
 // add actions
 add_action('admin_menu', 'azrcrv_m_create_admin_menu');
 add_action('admin_post_azrcrv_m_save_options', 'azrcrv_m_save_options');
+add_action('plugins_loaded', 'azrcrv_m_load_languages');
 
 // add filters
 add_filter('plugin_action_links', 'azrcrv_m_add_plugin_action_link', 10, 2);
@@ -52,6 +56,17 @@ add_shortcode('markdown', 'azrcrv_m_markdown_shortcode');
 
 // create global array to store markdown
 $azrcrv_m_markdown = array();
+
+/**
+ * Load language files.
+ *
+ * @since 1.0.0
+ *
+ */
+function azrcrv_m_load_languages() {
+    $plugin_rel_path = basename(dirname(__FILE__)).'/languages';
+    load_plugin_textdomain('azrcrv-m', false, $plugin_rel_path);
+}
 
 /**
  * Set default options for plugin.
