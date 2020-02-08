@@ -1,12 +1,12 @@
 === Markdown ===
 
-Description:	Allows markdown to be wrapped in a shortcode and converted to HTML.
-Version:		1.1.1
+Description:	Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
+Version:		2.0.0
 Tags:			markdown
 Author:			azurecurve
 Author URI:		https://development.azurecurve.co.uk/
 Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/markdown/
-Download link:	https://github.com/azurecurve/azrcrv-markdown/releases/download/v1.1.0/azrcrv-markdown.zip
+Download link:	https://github.com/azurecurve/azrcrv-markdown/releases/download/v2.0.0/azrcrv-markdown.zip
 Donate link:	https://development.azurecurve.co.uk/support-development/
 Requires PHP:	5.6
 Requires:		1.0.0
@@ -16,17 +16,15 @@ Domain Path:	/languages
 License: 		GPLv2 or later
 License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 
-Allows markdown to be wrapped in a shortcode and converted to HTML.
+Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
 
 == Description ==
 
 # Description
 
-Wrap markdown in the [markdown]shortcodes[/markdown] to have it parsed and converted into HTML.
+Options to enable conversion of markdown in posts, pages or wrap markdown in the [markdown] to have it parsed and converted into HTML markup. Place opening and closing markdown shortcode tags on separate lines to ensure markdown converted correctly.
 
-Option to allow the output of other shortcodes to be parsed for markdown; if not enabled any markdown output by other shortcodes will remain markdown.
-
-Uses (Parsedown)[https://github.com/erusev/parsedown] and (Parsedown Extra)[https://github.com/erusev/parsedown-extra] as well as some code from (Markdown Shortcode)[https://github.com/JohannesHoppe/markdown-shortcode/].
+Uses (Parsedown)[https://github.com/erusev/parsedown] and (Parsedown Extra)[https://github.com/erusev/parsedown-extra].
 
 This plugin is multisite compatible; settings need to be configured for each site.
 
@@ -53,14 +51,20 @@ This plugin is developed for ClassicPress, but will likely work on WordPress.
 
 # Changelog
 
-### [Version 1.1.1](https://github.com/azurecurve/azrcrv-markdown/tree/v1.1.1)
+### [Version 2.0.0](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v2.0.0)
+ * Added options to enable markdown in post and page content; option for shortcode needs to be reconfigured after upgrade.
+ * Rewrite how markdown shortcode is handled.
+ * Fix bug with shortcodes setting being ignored.
+ * Add azurecurve icon to plugins action link.
+
+### [Version 1.1.1](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v1.1.1)
  * Fix bug with incorrect language load text domain.
 
-### [Version 1.1.0](https://github.com/azurecurve/azrcrv-markdown/tree/v1.1.0)
+### [Version 1.1.0](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v1.1.0)
  * Add integration with Update Manager for automatic updates.
  * Add load_plugin_textdomain to handle translations.
 
-### [Version 1.0.0](https://github.com/azurecurve/azrcrv-markdown/tree/v1.0.0)
+### [Version 1.0.0](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v1.0.0)
  * Initial release.
 
 == Other Notes ==

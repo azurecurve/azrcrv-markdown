@@ -2,8 +2,8 @@
 /**
  * ------------------------------------------------------------------------------
  * Plugin Name: Markdown
- * Description: Allows markdown to be wrapped in a shortcode and converted to HTML.
- * Version: 1.1.1
+ * Description: Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
+ * Version: 2.0.0
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/markdown/
@@ -49,13 +49,10 @@ add_action('plugins_loaded', 'azrcrv_m_load_languages');
 
 // add filters
 add_filter('plugin_action_links', 'azrcrv_m_add_plugin_action_link', 10, 2);
-add_filter('the_content', 'azrcrv_m_markdown_shortcode_preprocess', 1);
+add_filter ('the_content', 'azrcrv_m_convert_content_markdown_to_markup', 1, 2);
 
 // add shortcode
 add_shortcode('markdown', 'azrcrv_m_markdown_shortcode');
-
-// create global array to store markdown
-$azrcrv_m_markdown = array();
 
 /**
  * Load language files.
@@ -79,8 +76,12 @@ function azrcrv_m_set_default_options($networkwide){
 	$option_name = 'azrcrv-m';
 	
 	$new_options = array(
-						'allow_shortcodes' => 1,
-			);
+						'allow_markdown' => array(
+												'shortcodes' => 1,
+												'post' => 0,
+												'page' => 0,
+											),
+					);
 	
 	// set defaults for multi-site
 	if (function_exists('is_multisite') && is_multisite()){
@@ -131,7 +132,7 @@ function azrcrv_m_add_plugin_action_link($links, $file){
 	}
 
 	if ($file == $this_plugin){
-		$settings_link = '<a href="'.get_bloginfo('wpurl').'/wp-admin/admin.php?page=azrcrv-m">'.esc_html__('Settings' ,'markdown').'</a>';
+		$settings_link = '<a href="'.get_bloginfo('wpurl').'/wp-admin/admin.php?page=azrcrv-m"><img src="'.plugins_url('/pluginmenu/images/Favicon-16x16.png', __FILE__).'" style="padding-top: 2px; margin-right: -5px; height: 16px; width: 16px;" alt="azurecurve" />'.esc_html__('Settings' ,'markdown').'</a>';
 		array_unshift($links, $settings_link);
 	}
 
@@ -192,7 +193,7 @@ function azrcrv_m_display_options(){
 			<form method="post" action="admin-post.php">
 			
 				<input type="hidden" name="action" value="azrcrv_m_save_options" />
-				<input name="page_options" type="hidden" value="allow_shortcodes" />
+				<input name="page_options" type="hidden" value="allow_shortcodes,allow_post_markdown,allow_page_markdown" />
 				
 				<!-- Adding security through hidden referrer field -->
 				<?php wp_nonce_field('azrcrv-m', 'azrcrv-m-nonce'); ?>
@@ -200,7 +201,19 @@ function azrcrv_m_display_options(){
 				
 					<tr><th scope="row"><label for="card_type"><?php esc_html_e('Enable shortcodes?', 'markdown'); ?></label></th><td>
 						<fieldset><legend class="screen-reader-text"><span>Allow shortcodes in markdown</span></legend>
-							<label for="allow_shortcodes"><input name="allow_shortcodes" type="checkbox" id="allow_shortcodes" value="1" <?php checked('1', $options['allow_shortcodes']); ?> /><?php esc_html_e('Allow markdown supplied in shortcodes to be parsed', 'markdown'); ?></label>
+							<label for="allow_shortcodes"><input name="allow_shortcodes" type="checkbox" id="allow_shortcodes" value="1" <?php checked('1', $options['allow_markdown']['shortcodes']); ?> /><?php esc_html_e('Allow markdown supplied in shortcodes to be parsed', 'markdown'); ?></label>
+						</fieldset>
+					</td></tr>
+				
+					<tr><th scope="row"><label for="card_type"><?php esc_html_e('Enable post markdown?', 'markdown'); ?></label></th><td>
+						<fieldset><legend class="screen-reader-text"><span>Allow markdown in posts</span></legend>
+							<label for="allow_post_markdown"><input name="allow_post_markdown" type="checkbox" id="allow_post_markdown" value="1" <?php checked('1', $options['allow_markdown']['post']); ?> /><?php esc_html_e('Allow markdown supplied in post content to be parsed', 'markdown'); ?></label>
+						</fieldset>
+					</td></tr>
+				
+					<tr><th scope="row"><label for="card_type"><?php esc_html_e('Enable page markdown?', 'markdown'); ?></label></th><td>
+						<fieldset><legend class="screen-reader-text"><span>Allow markdown in pages</span></legend>
+							<label for="allow_page_markdown"><input name="allow_page_markdown" type="checkbox" id="allow_page_markdown" value="1" <?php checked('1', $options['allow_markdown']['page']); ?> /><?php esc_html_e('Allow markdown supplied in page content to be parsed', 'markdown'); ?></label>
 						</fieldset>
 					</td></tr>
 				
@@ -229,16 +242,25 @@ function azrcrv_m_save_options(){
 		// Retrieve original plugin options array
 		$options = get_option('azrcrv-m');
 		
-		$option_name = 'allow_shortcodes';
-		if (isset($_POST[$option_name])){
-			$options[$option_name] = 1;
+		$option_name = 'shortcodes';
+		if (isset($_POST['allow_shortcodes'])){
+			$options['allow_markdown'][$option_name] = 1;
 		}else{
-			$options[$option_name] = 0;
+			$options['allow_markdown'][$option_name] = 0;
 		}
 		
-		$option_name = 'min_length';
-		if (isset($_POST[$option_name])){
-			$options[$option_name] = sanitize_text_field(intval($_POST[$option_name]));
+		$option_name = 'post';
+		if (isset($_POST['allow_post_markdown'])){
+			$options['allow_markdown'][$option_name] = 1;
+		}else{
+			$options['allow_markdown'][$option_name] = 0;
+		}
+		
+		$option_name = 'page';
+		if (isset($_POST['allow_page_markdown'])){
+			$options['allow_markdown'][$option_name] = 1;
+		}else{
+			$options['allow_markdown'][$option_name] = 0;
 		}
 		
 		// Store updated options array to database
@@ -251,64 +273,54 @@ function azrcrv_m_save_options(){
 }
 
 /**
- * Check if function active (included due to standard function failing due to order of load).
+ * Convert markdown to markup in shortcode content.
  *
  * @since 1.0.0
  *
  */
 function azrcrv_m_markdown_shortcode($atts, $content = null){
-	global $azrcrv_m_markdown;
 	
 	$options = get_option('azrcrv-m');
 	
-    if (isset($azrcrv_m_markdown[$content])) {
-      $content = $azrcrv_m_markdown[$content];
-    }
-	
-    $content = html_entity_decode($content);
-    $content = trim($content);
-	
-	$Parsedown = new ParsedownExtra();
-	
-	if ($options['allow_shortcodes'] == 1){
-		$content = do_shortcode($content);
+	if ($options['allow_markdown']['shortcodes'] == 1){
+		$output = html_entity_decode($content);
+		$output = trim($output);
+		
+		$Parsedown = new ParsedownExtra();
+		//$output = do_shortcode($output);
+		$new_content = $Parsedown->text($content);
+	}else{
+		$new_content = $content;
 	}
 	
-	$output = $Parsedown->text($content);
+	return $new_content;
+
+}
+
+/**
+ * Convert markdown to markup in post content.
+ *
+ * @since 2.0.0
+ *
+ */
+function azrcrv_m_convert_content_markdown_to_markup($content){
+	global $post;
 	
-	return $output;
-
-}
-
-// Replaces more than one underscore to same amount of spaces
-function underscores_to_spaces($content) {
-	$content = preg_replace_callback('/_{2,}/', function ($matches) {
-		return str_replace('_', ' ', $matches[0]);
-	}, $content);
-	return $content;
-}
-
-function azrcrv_m_markdown_shortcode_preprocess($content) {
-	global $shortcode_tags;
-
-	// Backup current registered shortcodes and clear them all out
-	$orig_shortcode_tags = $shortcode_tags;
-	$shortcode_tags = array();
-
-	add_shortcode('markdown', 'azrcrv_m_markdown_shortcode_pre');
-
-	// Do the shortcode (only the one above is registered)
-	$content = do_shortcode($content);	
-
-	// Put the original shortcodes back
-	$shortcode_tags = $orig_shortcode_tags;
+	$options = get_option('azrcrv-m');
 	
-	return $content;
-}
-
-function azrcrv_m_markdown_shortcode_pre($attr, $content = null) {
-	global $azrcrv_m_markdown;
-	$key = sha1($content);
-	$azrcrv_m_markdown[$key] = $content;
-	return "[markdown]{$key}[/markdown]";
+	if (($options['allow_markdown']['post'] == 1 AND $post->post_type == 'post') OR ($options['allow_markdown']['page'] == 1 AND $post->post_type == 'page')){
+		$Parsedown = new ParsedownExtra();
+		
+		$new_content = $content;
+		if ($options['allow_markdown']['post'] == 1){
+			$new_content = str_replace('[markdown]', '', $new_content);
+			$new_content = str_replace('[/markdown]', '', $new_content);
+		}
+		
+		$new_content = $Parsedown->text(do_shortcode($new_content));
+	}else{
+		$new_content = $content;
+	}
+	
+	return $new_content;
 }
