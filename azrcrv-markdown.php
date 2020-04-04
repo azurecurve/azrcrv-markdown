@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Markdown
  * Description: Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
- * Version: 2.0.1
+ * Version: 2.0.2
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/markdown/
@@ -94,28 +94,65 @@ function azrcrv_m_set_default_options($networkwide){
 
 			foreach ($blog_ids as $blog_id){
 				switch_to_blog($blog_id);
-
-				if (get_option($option_name) === false){
-					add_option($option_name, $new_options);
-				}
+				
+				azrcrv_m_update_options($option_name, $new_options, false);
 			}
 
 			switch_to_blog($original_blog_id);
 		}else{
-			if (get_option($option_name) === false){
-				add_option($option_name, $new_options);
-			}
+			azrcrv_m_update_options( $option_name, $new_options, false);
 		}
 		if (get_site_option($option_name) === false){
-			add_option($option_name, $new_options);
+			azrcrv_m_update_options($option_name, $new_options, true);
 		}
 	}
 	//set defaults for single site
 	else{
+		azrcrv_m_update_options($option_name, $new_options, false);
+	}
+}
+
+/**
+ * Update options.
+ *
+ * @since 1.1.3
+ *
+ */
+function azrcrv_m_update_options($option_name, $new_options, $is_network_site){
+	if ($is_network_site == true){
+		if (get_site_option($option_name) === false){
+			add_site_option($option_name, $new_options);
+		}else{
+			update_site_option($option_name, azrcrv_m_update_default_options($new_options, get_site_option($option_name)));
+		}
+	}else{
 		if (get_option($option_name) === false){
 			add_option($option_name, $new_options);
+		}else{
+			update_option($option_name, azrcrv_m_update_default_options($new_options, get_option($option_name)));
 		}
 	}
+}
+
+
+/**
+ * Add default options to existing options.
+ *
+ * @since 1.1.3
+ *
+ */
+function azrcrv_m_update_default_options( &$default_options, $current_options ) {
+    $default_options = (array) $default_options;
+    $current_options = (array) $current_options;
+    $updated_options = $current_options;
+    foreach ($default_options as $key => &$value) {
+        if (is_array( $value) && isset( $updated_options[$key ])){
+            $updated_options[$key] = azrcrv_m_update_default_options($value, $updated_options[$key], true);
+        } else {
+            $updated_options[$key] = $value;
+        }
+    }
+    return $updated_options;
 }
 
 /**
