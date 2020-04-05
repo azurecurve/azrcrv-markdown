@@ -1,7 +1,7 @@
 === Markdown ===
 
 Description:	Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
-Version:		2.0.2
+Version:		2.0.3
 Tags:			markdown
 Author:			azurecurve
 Author URI:		https://development.azurecurve.co.uk/
@@ -50,6 +50,11 @@ This plugin is developed for ClassicPress, but will likely work on WordPress.
 == Changelog ==
 
 # Changelog
+
+### [Version 2.0.3](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v2.0.3)
+ * Fix bug with setting of default options.
+ * Fix bug with plugin menu.
+ * Update plugin menu css.
 
 ### [Version 2.0.2](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v2.0.2)
  * Rewrite default option creation function to resolve several bugs.
