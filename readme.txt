@@ -1,12 +1,12 @@
 === Markdown ===
 
 Description:	Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
-Version:		2.0.3
+Version:		2.1.0
 Tags:			markdown
 Author:			azurecurve
 Author URI:		https://development.azurecurve.co.uk/
 Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/markdown/
-Download link:	https://github.com/azurecurve/azrcrv-markdown/releases/download/v2.0.2/azrcrv-markdown.zip
+Download link:	https://github.com/azurecurve/azrcrv-markdown/releases/download/v2.1.0/azrcrv-markdown.zip
 Donate link:	https://development.azurecurve.co.uk/support-development/
 Requires PHP:	5.6
 Requires:		1.0.0
@@ -51,6 +51,13 @@ This plugin is developed for ClassicPress, but will likely work on WordPress.
 
 # Changelog
 
+### [Version 2.1.0](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v2.1.0)
+ * Fix plugin action link to use admin_url() function.
+ * Rewrite option handling so defaults not stored in database on plugin initialisation.
+ * Add plugin icon and banner.
+ * Update azurecurve plugin menu.
+ * Amend to only load css when shortcode on page.
+
 ### [Version 2.0.3](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v2.0.3)
  * Fix bug with setting of default options.
  * Fix bug with plugin menu.
@@ -91,5 +98,5 @@ Some of the top plugins available from **azurecurve** are:
 * [Breadcrumbs](https://development.azurecurve.co.uk/classicpress-plugins/breadcrumbs/)
 * [Series Index](https://development.azurecurve.co.uk/classicpress-plugins/series-index/)
 * [To Twitter](https://development.azurecurve.co.uk/classicpress-plugins/to-twitter/)
-* [Theme Switches](https://development.azurecurve.co.uk/classicpress-plugins/theme-switcher/)
+* [Theme Switcher](https://development.azurecurve.co.uk/classicpress-plugins/theme-switcher/)
 * [Toggle Show/Hide](https://development.azurecurve.co.uk/classicpress-plugins/toggle-showhide/)
