@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Markdown
  * Description: Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
- * Version: 2.2.1
+ * Version: 2.2.2
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/markdown/
@@ -324,5 +324,5 @@ function azrcrv_m_convert_content_markdown_to_markup($content){
 		$new_content = $content;
 	}
 	
-	return $new_content;
+	return '<div class="azrcrv-gghf">' . $new_content . '</div>';
 }

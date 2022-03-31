@@ -1,0 +1,81 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Markdown\n"
+"POT-Creation-Date: 2021-12-27 18:05+0000\n"
+"PO-Revision-Date: 2019-02-24 18:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: translate@azurecurve.co.uk\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: azrcrv-markdown.php:132
+msgid "Settings"
+msgstr ""
+
+#: azrcrv-markdown.php:149
+msgid "Markdown Settings"
+msgstr ""
+
+#: azrcrv-markdown.php:150
+msgid "Markdown"
+msgstr ""
+
+#: azrcrv-markdown.php:174
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: azrcrv-markdown.php:191
+msgid "Settings have been saved."
+msgstr ""
+
+#: azrcrv-markdown.php:204
+msgid "Enable shortcodes?"
+msgstr ""
+
+#: azrcrv-markdown.php:206
+msgid "Allow markdown supplied in shortcodes to be parsed"
+msgstr ""
+
+#: azrcrv-markdown.php:210
+msgid "Enable post markdown?"
+msgstr ""
+
+#: azrcrv-markdown.php:212
+msgid "Allow markdown supplied in post content to be parsed"
+msgstr ""
+
+#: azrcrv-markdown.php:216
+msgid "Enable page markdown?"
+msgstr ""
+
+#: azrcrv-markdown.php:218
+msgid "Allow markdown supplied in page content to be parsed"
+msgstr ""
+
+#: azrcrv-markdown.php:239
+msgid "You do not have permissions to perform this action"
+msgstr ""
+
+#: libraries/updateclient/UpdateClient.class.php:191
+msgid "Compatible up to:"
+msgstr ""
+
+#: libraries/updateclient/UpdateClient.class.php:192
+msgid "Reviews"
+msgstr ""
+
+#: libraries/updateclient/UpdateClient.class.php:193
+msgid "Read all reviews"
+msgstr ""
+
+#: libraries/updateclient/UpdateClient.class.php:383
+msgid "View details"
+msgstr ""
