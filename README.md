@@ -3,7 +3,14 @@
 
 # Description
 
-Options to enable conversion of markdown in posts, pages or wrap markdown in the `[markdown]` to have it parsed and converted into HTML markup. Place opening and closing markdown shortcode tags on separate lines to ensure markdown converted correctly.
+This Markdown plugin allows for administrators to enable markdown to be used in various places and converted to HTML markup on output.
+
+Settings are available for:
+ 1. Posts.
+ 2. Pages.
+ 3. Comments.
+ 4. Custom Post Types set to **public**.
+ 5. A `[markdown]` shortcode is also available; for best results, place the opening and closing `[markdown]` shortcode tags on separate lines.
 
 Uses [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra).
 
