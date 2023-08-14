@@ -1,29 +1,27 @@
 === Markdown ===
 
-Description:	Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
-Version:		2.2.3
-Tags:			markdown
-Author:			azurecurve
-Author URI:		https://development.azurecurve.co.uk/
-Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/markdown/
-Download link:	https://github.com/azurecurve/azrcrv-markdown/releases/download/v2.2.3/azrcrv-markdown.zip
-Donate link:	https://development.azurecurve.co.uk/support-development/
-Requires PHP:	5.6
-Requires CP:	1.0
-Requires:		1.0.0
-Tested:			4.9.99
-Text Domain:	markdown
-Domain Path:	/languages
-License: 		GPLv2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Tags:				markdown
+Requires at least:	1.0.0
+Tested up to:		4.9.99
+Download link:		https://github.com/azurecurve/azrcrv-markdown/releases/download/v3.0.0/azrcrv-markdown.zip
+Donate link:		https://development.azurecurve.co.uk/support-development/
+License: 			GPLv2 or later
+License URI: 		http://www.gnu.org/licenses/gpl-2.0.html
 
-Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
+Allows markdown to be converted to HTML markup in post, pages, comments, public custom post types or by wrapping in a shortcode.
 
 == Description ==
 
 # Description
 
-Options to enable conversion of markdown in posts, pages or wrap markdown in the `[markdown]` to have it parsed and converted into HTML markup. Place opening and closing markdown shortcode tags on separate lines to ensure markdown converted correctly.
+This Markdown plugin allows for administrators to enable markdown to be used in various places and converted to HTML markup on output.
+
+Settings are available for:
+ 1. Posts.
+ 2. Pages.
+ 3. Comments.
+ 4. Custom Post Types set to **public**.
+ 5. A `[markdown]` shortcode is also available; for best results, place the opening and closing `[markdown]` shortcode tags on separate lines.
 
 Uses [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra).
 
@@ -51,6 +49,13 @@ This plugin is developed for ClassicPress, but will likely work on WordPress.
 == Changelog ==
 
 # Changelog
+
+### [Version 3.0.0](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v3.0.0)
+ * Refactor code to use namespace, improve security and improve maintainability.
+ * Update language file.
+ * Update Update Manager to version 2.5.0.
+ * Add option to allow markdown in comments.
+ * Add option to allow markdown in public custom post types.
 
 ### [Version 2.2.3](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v2.2.3)
  * Update readme file for compatibility with ClassicPress Directory.
@@ -108,7 +113,7 @@ This plugin is developed for ClassicPress, but will likely work on WordPress.
 
 # About azurecurve
 
-**azurecurve** was one of the first plugin developers to start developing for ClassicPress; all plugins are available from [azurecurve Development](https://development.azurecurve.co.uk/) and are integrated with the [Update Manager plugin](https://directory.classicpress.net/plugins/update-manager) for fully integrated, no hassle, updates.
+**azurecurve** was one of the first plugin developers to start developing for Classicpress; all plugins are available from [azurecurve Development](https://development.azurecurve.co.uk/) and are integrated with the [Update Manager plugin](https://directory.classicpress.net/plugins/update-manager) for fully integrated, no hassle, updates.
 
 The other plugins available from **azurecurve** are:
  * Add Open Graph Tags - [details](https://development.azurecurve.co.uk/classicpress-plugins/add-open-graph-tags/) / [download](https://github.com/azurecurve/azrcrv-add-open-graph-tags/releases/latest/)
@@ -138,6 +143,7 @@ The other plugins available from **azurecurve** are:
  * Load Admin CSS - [details](https://development.azurecurve.co.uk/classicpress-plugins/load-admin-css/) / [download](https://github.com/azurecurve/azrcrv-load-admin-css/releases/latest/)
  * Loop Injection - [details](https://development.azurecurve.co.uk/classicpress-plugins/loop-injection/) / [download](https://github.com/azurecurve/azrcrv-loop-injection/releases/latest/)
  * Maintenance Mode - [details](https://development.azurecurve.co.uk/classicpress-plugins/maintenance-mode/) / [download](https://github.com/azurecurve/azrcrv-maintenance-mode/releases/latest/)
+ * Markdown - [details](https://development.azurecurve.co.uk/classicpress-plugins/markdown/) / [download](https://github.com/azurecurve/azrcrv-markdown/releases/latest/)
  * Mobile Detection - [details](https://development.azurecurve.co.uk/classicpress-plugins/mobile-detection/) / [download](https://github.com/azurecurve/azrcrv-mobile-detection/releases/latest/)
  * Multisite Favicon - [details](https://development.azurecurve.co.uk/classicpress-plugins/multisite-favicon/) / [download](https://github.com/azurecurve/azrcrv-multisite-favicon/releases/latest/)
  * Nearby - [details](https://development.azurecurve.co.uk/classicpress-plugins/nearby/) / [download](https://github.com/azurecurve/azrcrv-nearby/releases/latest/)
