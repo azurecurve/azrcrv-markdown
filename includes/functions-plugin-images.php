@@ -12,7 +12,7 @@ namespace azurecurve\Markdown;
  * Custom plugin image path.
  */
 function custom_image_path( $path ) {
-	return esc_url_raw( plugin_dir_url( PLUGIN_FILE ) . 'assets/images' );
+	return plugin_dir_path( PLUGIN_FILE ) . 'assets/images';
 }
 
 /**

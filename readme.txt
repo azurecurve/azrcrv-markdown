@@ -3,7 +3,7 @@
 Tags:				markdown
 Requires at least:	1.0.0
 Tested up to:		4.9.99
-Download link:		https://github.com/azurecurve/azrcrv-markdown/releases/download/v3.0.0/azrcrv-markdown.zip
+Download link:		https://github.com/azurecurve/azrcrv-markdown/releases/download/v3.0.1/azrcrv-markdown.zip
 Donate link:		https://development.azurecurve.co.uk/support-development/
 License: 			GPLv2 or later
 License URI: 		http://www.gnu.org/licenses/gpl-2.0.html
@@ -49,6 +49,9 @@ This plugin is developed for ClassicPress, but will likely work on WordPress.
 == Changelog ==
 
 # Changelog
+
+### [Version 3.0.1](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v3.0.1)
+ * Fix bug with display of plugin banner image.
 
 ### [Version 3.0.0](https://github.com/azurecurve/azrcrv-markdown/releases/tag/v3.0.0)
  * Refactor code to use namespace, improve security and improve maintainability.
