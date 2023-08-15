@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Markdown\n"
-"POT-Creation-Date: 2021-12-27 18:05+0000\n"
+"POT-Creation-Date: 2023-08-15 15:26+0100\n"
 "PO-Revision-Date: 2019-02-24 18:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: translate@azurecurve.co.uk\n"
@@ -11,71 +11,227 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
-"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Poedit-Basepath: ../..\n"
 "X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: azrcrv-markdown.php:132
+#: includes/azurecurve-menu-display.php:51
+msgid "Active Plugins"
+msgstr ""
+
+#: includes/azurecurve-menu-display.php:83 includes/tab-other-plugins.php:52
+#, php-format
+msgid "%1$s was one of the first plugin developers to start developing for ClassicPress; all plugins are available from %2$s and are integrated with the %3$s plugin for fully integrated, no hassle, updates."
+msgstr ""
+
+#: includes/azurecurve-menu-display.php:86
+#, php-format
+msgid "The %s plugins active on your site are:"
+msgstr ""
+
+#: includes/azurecurve-menu-display.php:105
+msgid "Other Available Plugins"
+msgstr ""
+
+#: includes/azurecurve-menu-display.php:131
+#, php-format
+msgid "Congratulations! You're using all of the %s plugins."
+msgstr ""
+
+#: includes/azurecurve-menu-display.php:143
+#, php-format
+msgid "The other plugins available from %s are:"
+msgstr ""
+
+#: includes/azurecurve-menu-tabs-output.php:50
+msgid "Support"
+msgstr ""
+
+#: includes/azurecurve-menu-tabs-output.php:61 includes/tabs-output.php:104
+msgid "You can help support the development of our free plugins by donating a small amount of money."
+msgstr ""
+
+#: includes/functions-menu.php:19 includes/functions-menu.php:33
+#: includes/tab-settings.php:15
 msgid "Settings"
 msgstr ""
 
-#: azrcrv-markdown.php:149
-msgid "Markdown Settings"
-msgstr ""
-
-#: azrcrv-markdown.php:150
-msgid "Markdown"
-msgstr ""
-
-#: azrcrv-markdown.php:174
+#: includes/functions-settings.php:39
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: azrcrv-markdown.php:191
+#: includes/functions-settings.php:55
 msgid "Settings have been saved."
 msgstr ""
 
-#: azrcrv-markdown.php:204
-msgid "Enable shortcodes?"
-msgstr ""
-
-#: azrcrv-markdown.php:206
-msgid "Allow markdown supplied in shortcodes to be parsed"
-msgstr ""
-
-#: azrcrv-markdown.php:210
-msgid "Enable post markdown?"
-msgstr ""
-
-#: azrcrv-markdown.php:212
-msgid "Allow markdown supplied in post content to be parsed"
-msgstr ""
-
-#: azrcrv-markdown.php:216
-msgid "Enable page markdown?"
-msgstr ""
-
-#: azrcrv-markdown.php:218
-msgid "Allow markdown supplied in page content to be parsed"
-msgstr ""
-
-#: azrcrv-markdown.php:239
+#: includes/functions-settings.php:76
 msgid "You do not have permissions to perform this action"
 msgstr ""
 
-#: libraries/updateclient/UpdateClient.class.php:191
+#: includes/tab-instructions.php:14
+msgid "Instructions"
+msgstr ""
+
+#: includes/tab-instructions.php:22
+msgid "Markdown shortcode"
+msgstr ""
+
+#: includes/tab-instructions.php:33
+#, php-format
+msgid "When the %1$s shortcode functionality is enabled, text containing markdown can be wrapped with the %2$s shortcode to be converted on output to HTML."
+msgstr ""
+
+#: includes/tab-instructions.php:44
+msgid "Markdown in posts and pages"
+msgstr ""
+
+#: includes/tab-instructions.php:55
+msgid "Posts and pages can be individually enabled for markdown; any markdown in the enabled post type will have markdown converted upon output to HTML. Any shortcode in the post content will be removed to avoid possible conflicts."
+msgstr ""
+
+#: includes/tab-instructions.php:67
+msgid "Markdown in comments"
+msgstr ""
+
+#: includes/tab-instructions.php:78
+msgid "Comments can be enabled for markdown; any markdown in the comment will have markdown converted to HTML on output."
+msgstr ""
+
+#: includes/tab-instructions.php:90
+msgid "Markdown in custom post types"
+msgstr ""
+
+#: includes/tab-instructions.php:101
+msgid "Custom post types which are public can also be enabled for markdown; this section of the options is only visible if such post types exist."
+msgstr ""
+
+#: includes/tab-other-plugins.php:43
+msgid "Other Plugins"
+msgstr ""
+
+#: includes/tab-other-plugins.php:63
+msgid "Complementary Plugins"
+msgstr ""
+
+#: includes/tab-other-plugins.php:75
+#, php-format
+msgid "%s has the following plugins which allow shortcodes to be used in comments and widgets:"
+msgstr ""
+
+#: includes/tab-other-plugins.php:104
+msgid "Available Plugins"
+msgstr ""
+
+#: includes/tab-other-plugins.php:115
+#, php-format
+msgid "Other plugins available from %s, which you are not using, are:"
+msgstr ""
+
+#: includes/tab-settings.php:24
+msgid "Markdown allows the user of markdown, instead of HTML markup, through a shortcode or on posts, pages and other post types."
+msgstr ""
+
+#: includes/tab-settings.php:35
+msgid "Enable markdown shortcode"
+msgstr ""
+
+#: includes/tab-settings.php:45
+msgid "Enable markdown shortcode?"
+msgstr ""
+
+#: includes/tab-settings.php:54
+msgid "Allow shortcodes in markdown?"
+msgstr ""
+
+#: includes/tab-settings.php:58
+msgid "Allows markdown supplied in shortcodes to be parsed."
+msgstr ""
+
+#: includes/tab-settings.php:71
+msgid "Enable markdown in posts and pages"
+msgstr ""
+
+#: includes/tab-settings.php:81
+msgid "Enable markdown in posts?"
+msgstr ""
+
+#: includes/tab-settings.php:90
+msgid "Allow markdown in posts?"
+msgstr ""
+
+#: includes/tab-settings.php:94
+msgid "Allows markdown supplied in post content to be parsed."
+msgstr ""
+
+#: includes/tab-settings.php:107
+msgid "Enable markdown in pages?"
+msgstr ""
+
+#: includes/tab-settings.php:116
+msgid "Allow markdown in pages?"
+msgstr ""
+
+#: includes/tab-settings.php:120
+msgid "Allows markdown supplied in page content to be parsed."
+msgstr ""
+
+#: includes/tab-settings.php:133
+msgid "Enable markdown in comments"
+msgstr ""
+
+#: includes/tab-settings.php:143
+msgid "Enable markdown in comments?"
+msgstr ""
+
+#: includes/tab-settings.php:152
+msgid "Allow markdown in comments?"
+msgstr ""
+
+#: includes/tab-settings.php:156
+msgid "Allows markdown supplied in comment content to be parsed."
+msgstr ""
+
+#: includes/tab-settings.php:178
+msgid "Enable markdown in custom post types"
+msgstr ""
+
+#: includes/tab-settings.php:198
+#, php-format
+msgid "Enable markdown in %s?"
+msgstr ""
+
+#: includes/tab-settings.php:207
+#, php-format
+msgid "Allow markdown in %s?"
+msgstr ""
+
+#: includes/tab-settings.php:211
+#, php-format
+msgid "Allows markdown supplied in %s content to be parsed."
+msgstr ""
+
+#: includes/tabs-output.php:85
+msgid "Save Settings"
+msgstr ""
+
+#: includes/tabs-output.php:94
+#, php-format
+msgid "Support %s"
+msgstr ""
+
+#: libraries/updateclient/UpdateClient.class.php:199
 msgid "Compatible up to:"
 msgstr ""
 
-#: libraries/updateclient/UpdateClient.class.php:192
+#: libraries/updateclient/UpdateClient.class.php:199
 msgid "Reviews"
 msgstr ""
 
-#: libraries/updateclient/UpdateClient.class.php:193
+#: libraries/updateclient/UpdateClient.class.php:199
 msgid "Read all reviews"
 msgstr ""
 
-#: libraries/updateclient/UpdateClient.class.php:383
+#: libraries/updateclient/UpdateClient.class.php:396
 msgid "View details"
 msgstr ""
