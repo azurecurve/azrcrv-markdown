@@ -3,14 +3,14 @@
  * ------------------------------------------------------------------------------
  * Plugin Name:		Markdown
  * Description:		Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
- * Version:			3.0.1
+ * Version:			3.0.2
  * Requires CP:		1.0
  * Author:			azurecurve
  * Author URI:		https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/markdown/
  * Donate link:		https://development.azurecurve.co.uk/support-development/
  * Text Domain:     azrcrv-m
- * Domain Path:     /languages
+ * Domain Path:     /assets/languages
  * License:         GPLv2 or later
  * License URI:     http://www.gnu.org/licenses/gpl-2.0.html
  * ------------------------------------------------------------------------------
