@@ -45,8 +45,8 @@ function convert_post_content_markdown_to_markup( $content ) {
 	global $post;
 
 	$options = get_option_with_defaults( PLUGIN_HYPHEN );
-
-	if ( ( $options['allow_markdown']['post'] == 1 and $post->post_type == 'post' ) or ( $options['allow_markdown']['page'] == 1 and $post->post_type == 'page' ) or ( $options['allow_markdown']['post_types'][ $post->post_type ] == 1 ) ) {
+	
+	if ( ( $options['allow_markdown']['post'] == 1 and $post->post_type == 'post' ) or ( $options['allow_markdown']['page'] == 1 and $post->post_type == 'page' ) or ( $options['allow_markdown']['post_types'] and isset($options['allow_markdown']['post_types'][ $post->post_type ]) and $options['allow_markdown']['post_types'][ $post->post_type ] == 1 ) ) {
 
 		$Parsedown = new \ParsedownExtra();
 

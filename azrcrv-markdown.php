@@ -3,8 +3,9 @@
  * ------------------------------------------------------------------------------
  * Plugin Name:		Markdown
  * Description:		Allows markdown to be converted to HTML markup in post, pages or by wrapping in a shortcode.
- * Version:			3.0.2
+ * Version:			3.0.3
  * Requires CP:		1.0
+ * Requires PHP:	7.4
  * Author:			azurecurve
  * Author URI:		https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/markdown/

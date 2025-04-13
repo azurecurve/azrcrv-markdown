@@ -208,7 +208,7 @@ $tab_settings       = '
 												</legend>
 												
 												<label for="allow_page_markdown">
-													<input name="post_types[' . $posttype->name . ']" type="checkbox" id="post_types[' . $posttype->name . ']" value="1" ' . checked( '1', $options['allow_markdown']['post_types'][ $posttype->name ], false ) . ' /> ' . sprintf( esc_html__( 'Allows markdown supplied in %s content to be parsed.', 'azrcrv-m' ), $posttype->labels->name ) . '
+													<input name="post_types[' . $posttype->name . ']" type="checkbox" id="post_types[' . $posttype->name . ']" value="1" ' . checked( '1', $current_setting, false ) . ' /> ' . sprintf( esc_html__( 'Allows markdown supplied in %s content to be parsed.', 'azrcrv-m' ), $posttype->labels->name ) . '
 												</label>
 												
 											</fieldset>
